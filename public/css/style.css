@@ -1,0 +1,113 @@
+:root {
+    --color-primary:   #1e3a8a;
+    --color-secondary: #374fcf;
+    --color-bg:        #f1f4f9;
+    --color-surface:   #ffffff;
+    --radius:          8px;
+  }
+  
+  * {
+    margin: 0; padding: 0; box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI',sans-serif;
+    background: var(--color-bg);
+    color: #333;
+  }
+  
+  header {
+    background: var(--color-primary);
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  
+  nav ul {
+    display: flex; justify-content: center;
+    list-style: none; gap: 15px; margin-top:10px;
+  }
+  
+  nav a {
+    color: #fff; font-weight:500; padding:8px 16px;
+    border-radius: var(--radius); transition: background .3s;
+  }
+  
+  nav a:hover { background: var(--color-secondary); }
+  
+  main {
+    max-width:1000px; margin:40px auto;
+    background: var(--color-surface);
+    padding:30px; border-radius:var(--radius);
+    box-shadow:0 4px 20px rgba(0,0,0,0.05);
+  }
+  
+  h2 { color: var(--color-primary); margin-bottom:20px; }
+  
+  form input, form textarea, form select {
+    width:100%; padding:10px; margin:10px 0;
+    border:1px solid #ccc; border-radius:var(--radius);
+    background:#f9fafb; transition: border .2s;
+  }
+  
+  form input:focus, textarea:focus, select:focus {
+    border-color:var(--color-secondary); outline:none;
+  }
+  
+  input[type="submit"], button {
+    background: var(--color-primary);
+    color:#fff; padding:10px 20px;
+    border:none; border-radius:var(--radius);
+    cursor:pointer; transition: background .3s;
+  }
+  
+  input[type="submit"]:hover, button:hover {
+    background: var(--color-secondary);
+  }
+  
+  .events-grid {
+    display: grid; grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+  }
+  
+  .event-card {
+    background: var(--color-surface);
+    border-radius:var(--radius);
+    padding:1rem; box-shadow:0 2px 6px rgba(0,0,0,0.05);
+    transition: transform .2s,box-shadow .2s;
+    cursor:pointer;
+  }
+  
+  .event-card:hover, .event-card:focus {
+    transform:translateY(-4px);
+    box-shadow:0 4px 12px rgba(0,0,0,0.1);
+    outline:none;
+  }
+  
+  table {
+    width:100%; border-collapse:collapse; margin-top:20px;
+  }
+  
+  th, td {
+    padding:12px; border:1px solid #e5e7eb; text-align:left;
+  }
+  
+  th {
+    background:#f1f5f9; color: var(--color-primary);
+  }
+  
+  tr:nth-child(even) { background:#f9fafb; }
+  
+  footer {
+    text-align:center; padding:20px;
+    background:#e2e8f0; color:#555; margin-top:40px;
+  }
+  
+  /* Responsive */
+  @media (max-width:768px) {
+    nav ul { flex-direction: column; gap:10px; }
+    main { margin:20px; padding:20px; }
+    .event-card { font-size:.9rem; }
+  }
+  
